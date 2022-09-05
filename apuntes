@@ -1,0 +1,24 @@
+''' para poder hacer la actualizacion:
+
+
+
+que datos se van a actulizar del equipo ????
+
+para borrar (.remove or .dell)
+
+1 leer archivo 
+2 solicitar equipo y fecha 
+3 buscar el equipo en la lista 
+4 separar los datos del equipo (split)
+5cambiar últimma posicion 
+6 unir los datos 
+7actualizar la lista 
+8 reescribir archivo 
+
+
+for.....
+    if equipo in lista de equipos 
+    
+    
+    
+'''
