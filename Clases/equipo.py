@@ -12,31 +12,30 @@ class equipo:
         self.ciclo= ciclo 
         self.fum=fum
         self.cantidad=cantidad
-        
+    #-----------------------------------------------    
+         
     def save_new_equipo(self):
         f=open(self.file,"a")
         linea=";".join([self.nombre,self.referencia,self.proveedor,self.ciclo,self.fum,self.cantidad])
         f.write(linea+"\n")
         f.close()
-
 #------------------------------------------------------------------------------
 
 def crear_equipo():
     print("Registrar nuevo equipo")
     print("")
-    nombre=input("Nombre")
-    referencia=input("referencia")
-    proveedor=input("Proveedor")
-    ciclo= input("ciclo de mantenimiento en días")
-    print("Ingrese la fecha de ultimo mantenimiento")
+    nombre=input("Nombre: ")
+    referencia=input("referencia: ")
+    proveedor=input("Proveedor: ")
+    ciclo= input("ciclo de mantenimiento en días: ")
+    print("Ingrese la fecha de ultimo mantenimiento: ")
     d_fum=int(input("dia dd:  "))
     m_fum=int(input("mes mm:  "))
     y_fum=int(input("ano yyyy:  "))
     fum= datetime(y_fum,m_fum,d_fum).strftime("%Y-%m-%d")
-    cantidad=input("cantidad")
+    cantidad=input("cantidad: ")
     eq = equipo(nombre,referencia,proveedor,ciclo,fum,cantidad)
     return eq
-
 #------------------------------------------------------------------------------
 
 def consultar_equipo():
@@ -57,7 +56,6 @@ def consultar_equipo():
     else:
         print("El  equipo no existe en la base de datos")
     return cantidad
-            
 #------------------------------------------------------------------------------
 
 def registro_mantenimiento():
@@ -77,8 +75,8 @@ def registro_mantenimiento():
             lista_equipos[pos]=";".join(datos_equipo)
         pos=pos+1
     save_all_equipos(lista_equipos)
-
 #------------------------------------------------------------------------------
+
 def rango_fechas():
     print("Por favor ingrese el rango de fechas que desea consultar")
     print("")
@@ -123,8 +121,6 @@ def rango_fechas():
                         print("Ciclo de mantenimiento: "+datos[3]) 
                         print("Fecha de ultimo mantenimiento: "+datos[4])
                         print("Cantidad: "+datos[5])
-
- 
 #------------------------------------------------------------------------------
 
 def save_all_equipos(equipos):
@@ -132,7 +128,6 @@ def save_all_equipos(equipos):
     for e in equipos:
         a.write(e)
     a.close()
-        
 #------------------------------------------------------------------------------
 
 def get_all_equipos():
